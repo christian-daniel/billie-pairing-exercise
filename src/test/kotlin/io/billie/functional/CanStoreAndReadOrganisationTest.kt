@@ -71,6 +71,22 @@ class CanStoreAndReadOrganisationTest {
     }
 
     @Test
+    fun cannotStoreOrgWhenNoLegalEntityType() {
+        mockMvc.perform(
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoLegalEntityType())
+        )
+            .andExpect(status().isBadRequest)
+    }
+
+    @Test
+    fun cannotStoreOrgWhenNoContactDetails() {
+        mockMvc.perform(
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoContactDetails())
+        )
+            .andExpect(status().isBadRequest)
+    }
+
+    @Test
     fun cannotStoreOrgWhenCountryCodeIsMissing() {
         mockMvc.perform(
             post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoCountryCode())
@@ -95,20 +111,25 @@ class CanStoreAndReadOrganisationTest {
     }
 
     @Test
-    fun cannotStoreOrgWhenNoLegalEntityType() {
-        mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoLegalEntityType())
-        )
-            .andExpect(status().isBadRequest)
-    }
+    fun cannotStoreOrgWhenCityIsMissing(): Unit = TODO()
 
     @Test
-    fun cannotStoreOrgWhenNoContactDetails() {
-        mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoContactDetails())
-        )
-            .andExpect(status().isBadRequest)
-    }
+    fun cannotStoreOrgWhenCityIsBlank(): Unit = TODO()
+
+    @Test
+    fun cannotStoreOrgWhenCityIsNotRecognised(): Unit = TODO()
+
+    @Test
+    fun cannotStoreOrgWhenPostalCodeIsMissing(): Unit = TODO()
+
+    @Test
+    fun cannotStoreOrgWhenPostalCodeIsBlank(): Unit = TODO()
+
+    @Test
+    fun cannotStoreOrgWhenAddressIsMissing(): Unit = TODO()
+
+    @Test
+    fun cannotStoreOrgWhenAddressIsBlank(): Unit = TODO()
 
     @Test
     fun canStoreOrg() {
