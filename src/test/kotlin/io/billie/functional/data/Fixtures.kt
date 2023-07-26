@@ -1,8 +1,7 @@
 package io.billie.functional.data
 
 import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.HashMap
+import java.util.UUID
 
 object Fixtures {
 
@@ -118,7 +117,7 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
+            "    \"country_code\": \"\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -139,7 +138,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -161,13 +159,157 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
+            "    \"country_code\": \"XX\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
     }
+
+    fun orgRequestJsonNoCity() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "postal_code": "W1A 1AA",
+    "address": "Portland Place"
+  }
+}
+"""
+
+    fun orgRequestJsonCityBlank() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "",
+    "postal_code": "W1A 1AA",
+    "address": "Portland Place"
+  }
+}
+"""
+
+    fun orgRequestJsonCityIncorrect() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "XXXXX",
+    "postal_code": "W1A 1AA",
+    "address": "Portland Place"
+  }
+}
+"""
+
+    fun orgRequestJsonNoPostalCode() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "London",
+    "address": "Portland Place"
+  }
+}
+"""
+
+    fun orgRequestJsonPostalCodeBlank() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "London",
+    "postal_code": "",
+    "address": "Portland Place"
+  }
+}
+"""
+
+    fun orgRequestJsonNoAddress() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "London",
+    "postal_code": "W1A 1AA",
+  }
+}
+"""
+
+    fun orgRequestJsonAddressBlank() = """
+{
+  "name": "BBC",
+  "date_founded": "18/10/1922",
+  "vat_number": "333289454",
+  "registration_number": "3686147",
+  "legal_entity_type": "NONPROFIT_ORGANIZATION",
+  "contact_details": {
+    "phone_number": "+443700100222",
+    "fax": "",
+    "email": "yourquestions@bbc.co.uk"
+  },
+  "address": {
+    "country_code": "GB",
+    "city": "London",
+    "postal_code": "W1A 1AA",
+    "address": ""
+  }
+}
+"""
 
     fun bbcFixture(id: UUID): Map<String, Any> {
         val data = HashMap<String, Any>()
