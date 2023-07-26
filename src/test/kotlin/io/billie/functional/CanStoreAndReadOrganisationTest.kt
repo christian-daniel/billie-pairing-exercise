@@ -6,19 +6,19 @@ import io.billie.functional.data.Fixtures.bbcContactFixture
 import io.billie.functional.data.Fixtures.bbcFixture
 import io.billie.functional.data.Fixtures.orgRequestJson
 import io.billie.functional.data.Fixtures.orgRequestJsonAddressBlank
-import io.billie.functional.data.Fixtures.orgRequestJsonCityBlank
-import io.billie.functional.data.Fixtures.orgRequestJsonCityIncorrect
+import io.billie.functional.data.Fixtures.orgRequestJsonCityNameBlank
+import io.billie.functional.data.Fixtures.orgRequestJsonCityNameIncorrect
 import io.billie.functional.data.Fixtures.orgRequestJsonCountryCodeBlank
 import io.billie.functional.data.Fixtures.orgRequestJsonCountryCodeIncorrect
 import io.billie.functional.data.Fixtures.orgRequestJsonNameBlank
 import io.billie.functional.data.Fixtures.orgRequestJsonNoAddress
-import io.billie.functional.data.Fixtures.orgRequestJsonNoCity
+import io.billie.functional.data.Fixtures.orgRequestJsonNoCityName
 import io.billie.functional.data.Fixtures.orgRequestJsonNoContactDetails
 import io.billie.functional.data.Fixtures.orgRequestJsonNoCountryCode
 import io.billie.functional.data.Fixtures.orgRequestJsonNoLegalEntityType
 import io.billie.functional.data.Fixtures.orgRequestJsonNoName
-import io.billie.functional.data.Fixtures.orgRequestJsonNoPostalCode
-import io.billie.functional.data.Fixtures.orgRequestJsonPostalCodeBlank
+import io.billie.functional.data.Fixtures.orgRequestJsonNopostcode
+import io.billie.functional.data.Fixtures.orgRequestJsonpostcodeBlank
 import io.billie.organisations.viewmodel.Entity
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.IsEqual.equalTo
@@ -120,7 +120,7 @@ class CanStoreAndReadOrganisationTest {
     @Test
     fun cannotStoreOrgWhenCityIsMissing() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoCity())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoCityName())
         )
             .andExpect(status().isBadRequest)
     }
@@ -128,7 +128,7 @@ class CanStoreAndReadOrganisationTest {
     @Test
     fun cannotStoreOrgWhenCityIsBlank() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonCityBlank())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonCityNameBlank())
         )
             .andExpect(status().isBadRequest)
     }
@@ -136,23 +136,23 @@ class CanStoreAndReadOrganisationTest {
     @Test
     fun cannotStoreOrgWhenCityIsNotRecognised() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonCityIncorrect())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonCityNameIncorrect())
         )
             .andExpect(status().isBadRequest)
     }
 
     @Test
-    fun cannotStoreOrgWhenPostalCodeIsMissing() {
+    fun cannotStoreOrgWhenpostcodeIsMissing() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoPostalCode())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNopostcode())
         )
             .andExpect(status().isBadRequest)
     }
 
     @Test
-    fun cannotStoreOrgWhenPostalCodeIsBlank() {
+    fun cannotStoreOrgWhenpostcodeIsBlank() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonPostalCodeBlank())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonpostcodeBlank())
         )
             .andExpect(status().isBadRequest)
     }

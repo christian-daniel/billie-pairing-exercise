@@ -19,8 +19,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -39,8 +39,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -59,8 +59,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -75,8 +75,8 @@ object Fixtures {
             "  \"registration_number\": \"3686147\",\n" +
             "  \"legal_entity_type\": \"NONPROFIT_ORGANIZATION\"\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -96,8 +96,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -117,8 +117,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -137,8 +137,8 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
@@ -158,14 +158,14 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"city\": \"London\",\n" +
-            "    \"postal_code\": \"W1A 1AA\",\n" +
+            "    \"city_name\": \"London\",\n" +
+            "    \"postcode\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
             "  }\n" +
             "}"
     }
 
-    fun orgRequestJsonNoCity() = """
+    fun orgRequestJsonNoCityName() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -179,13 +179,13 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "postal_code": "W1A 1AA",
+    "postcode": "W1A 1AA",
     "address": "Portland Place"
   }
 }
 """
 
-    fun orgRequestJsonCityBlank() = """
+    fun orgRequestJsonCityNameBlank() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -199,14 +199,14 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "",
-    "postal_code": "W1A 1AA",
+    "city_name": "",
+    "postcode": "W1A 1AA",
     "address": "Portland Place"
   }
 }
 """
 
-    fun orgRequestJsonCityIncorrect() = """
+    fun orgRequestJsonCityNameIncorrect() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -220,14 +220,14 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "XXXXX",
-    "postal_code": "W1A 1AA",
+    "city_name": "XXXXX",
+    "postcode": "W1A 1AA",
     "address": "Portland Place"
   }
 }
 """
 
-    fun orgRequestJsonNoPostalCode() = """
+    fun orgRequestJsonNopostcode() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -241,13 +241,13 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "London",
+    "city_name": "London",
     "address": "Portland Place"
   }
 }
 """
 
-    fun orgRequestJsonPostalCodeBlank() = """
+    fun orgRequestJsonpostcodeBlank() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -261,8 +261,8 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "London",
-    "postal_code": "",
+    "city_name": "London",
+    "postcode": "",
     "address": "Portland Place"
   }
 }
@@ -282,8 +282,8 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "London",
-    "postal_code": "W1A 1AA",
+    "city_name": "London",
+    "postcode": "W1A 1AA",
   }
 }
 """
@@ -302,8 +302,8 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "city": "London",
-    "postal_code": "W1A 1AA",
+    "city_name": "London",
+    "postcode": "W1A 1AA",
     "address": ""
   }
 }
@@ -333,8 +333,8 @@ object Fixtures {
     fun bbcAddressFixture(id: UUID): Map<String, Any> {
         val data = HashMap<String, Any>()
         data["id"] = id
-        data["city"] = "London"
-        data["postal_code"] = "W1A 1AA"
+        data["city_name"] = "London"
+        data["postcode"] = "W1A 1AA"
         data["address"] = "Portland Place"
         return data
     }
