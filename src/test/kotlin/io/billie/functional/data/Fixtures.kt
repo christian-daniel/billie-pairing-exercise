@@ -9,6 +9,7 @@ object Fixtures {
         return "{\n" +
             "  \"name\": \"\",\n" +
             "  \"date_founded\": \"18/10/1922\",\n" +
+            "  \"country_code\": \"GB\",\n" +
             "  \"vat_number\": \"333289454\",\n" +
             "  \"registration_number\": \"3686147\",\n" +
             "  \"legal_entity_type\": \"NONPROFIT_ORGANIZATION\",\n" +
@@ -18,7 +19,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -29,6 +29,7 @@ object Fixtures {
     fun orgRequestJsonNoName(): String {
         return "{\n" +
             "  \"date_founded\": \"18/10/1922\",\n" +
+            "  \"country_code\": \"GB\",\n" +
             "  \"vat_number\": \"333289454\",\n" +
             "  \"registration_number\": \"3686147\",\n" +
             "  \"legal_entity_type\": \"NONPROFIT_ORGANIZATION\",\n" +
@@ -38,7 +39,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -50,6 +50,7 @@ object Fixtures {
         return "{\n" +
             "  \"name\": \"BBC\",\n" +
             "  \"date_founded\": \"18/10/1922\",\n" +
+            "  \"country_code\": \"GB\",\n" +
             "  \"vat_number\": \"333289454\",\n" +
             "  \"registration_number\": \"3686147\",\n" +
             "  \"contact_details\": {\n" +
@@ -58,7 +59,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -70,11 +70,11 @@ object Fixtures {
         return "{\n" +
             "  \"name\": \"BBC\",\n" +
             "  \"date_founded\": \"18/10/1922\",\n" +
+            "  \"country_code\": \"GB\",\n" +
             "  \"vat_number\": \"333289454\",\n" +
             "  \"registration_number\": \"3686147\",\n" +
             "  \"legal_entity_type\": \"NONPROFIT_ORGANIZATION\"\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -86,6 +86,7 @@ object Fixtures {
         return "{\n" +
             "  \"name\": \"BBC\",\n" +
             "  \"date_founded\": \"18/10/1922\",\n" +
+            "  \"country_code\": \"GB\",\n" +
             "  \"vat_number\": \"333289454\",\n" +
             "  \"registration_number\": \"3686147\",\n" +
             "  \"legal_entity_type\": \"NONPROFIT_ORGANIZATION\",\n" +
@@ -95,7 +96,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"GB\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -117,7 +117,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -159,7 +158,6 @@ object Fixtures {
             "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
             "  },\n" +
             "  \"address\": {\n" +
-            "    \"country_code\": \"XX\",\n" +
             "    \"city\": \"London\",\n" +
             "    \"postal_code\": \"W1A 1AA\",\n" +
             "    \"address\": \"Portland Place\"\n" +
@@ -171,6 +169,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -180,7 +179,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "postal_code": "W1A 1AA",
     "address": "Portland Place"
   }
@@ -191,6 +189,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -200,7 +199,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "",
     "postal_code": "W1A 1AA",
     "address": "Portland Place"
@@ -212,6 +210,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -221,7 +220,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "XXXXX",
     "postal_code": "W1A 1AA",
     "address": "Portland Place"
@@ -233,6 +231,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -242,7 +241,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "London",
     "address": "Portland Place"
   }
@@ -253,6 +251,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -262,7 +261,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "London",
     "postal_code": "",
     "address": "Portland Place"
@@ -274,6 +272,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -283,7 +282,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "London",
     "postal_code": "W1A 1AA",
   }
@@ -294,6 +292,7 @@ object Fixtures {
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
+  "country_code": "GB",
   "vat_number": "333289454",
   "registration_number": "3686147",
   "legal_entity_type": "NONPROFIT_ORGANIZATION",
@@ -303,7 +302,6 @@ object Fixtures {
     "email": "yourquestions@bbc.co.uk"
   },
   "address": {
-    "country_code": "GB",
     "city": "London",
     "postal_code": "W1A 1AA",
     "address": ""
@@ -316,6 +314,7 @@ object Fixtures {
         data["id"] = id
         data["name"] = "BBC"
         data["date_founded"] = SimpleDateFormat("yyyy-MM-dd").parse("1922-10-18")
+        data["country_code"] = "GB"
         data["vat_number"] = "333289454"
         data["registration_number"] = "3686147"
         data["legal_entity_type"] = "NONPROFIT_ORGANIZATION"
@@ -334,7 +333,6 @@ object Fixtures {
     fun bbcAddressFixture(id: UUID): Map<String, Any> {
         val data = HashMap<String, Any>()
         data["id"] = id
-        data["country_code"] = "GB"
         data["city"] = "London"
         data["postal_code"] = "W1A 1AA"
         data["address"] = "Portland Place"
