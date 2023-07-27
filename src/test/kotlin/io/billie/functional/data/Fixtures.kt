@@ -227,7 +227,7 @@ object Fixtures {
 }
 """
 
-    fun orgRequestJsonNopostcode() = """
+    fun orgRequestJsonNoPostcode() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",
@@ -247,7 +247,7 @@ object Fixtures {
 }
 """
 
-    fun orgRequestJsonpostcodeBlank() = """
+    fun orgRequestJsonPostcodeBlank() = """
 {
   "name": "BBC",
   "date_founded": "18/10/1922",

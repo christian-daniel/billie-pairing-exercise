@@ -17,8 +17,8 @@ import io.billie.functional.data.Fixtures.orgRequestJsonNoContactDetails
 import io.billie.functional.data.Fixtures.orgRequestJsonNoCountryCode
 import io.billie.functional.data.Fixtures.orgRequestJsonNoLegalEntityType
 import io.billie.functional.data.Fixtures.orgRequestJsonNoName
-import io.billie.functional.data.Fixtures.orgRequestJsonNopostcode
-import io.billie.functional.data.Fixtures.orgRequestJsonpostcodeBlank
+import io.billie.functional.data.Fixtures.orgRequestJsonNoPostcode
+import io.billie.functional.data.Fixtures.orgRequestJsonPostcodeBlank
 import io.billie.organisations.viewmodel.Entity
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.IsEqual.equalTo
@@ -142,17 +142,17 @@ class CanStoreAndReadOrganisationTest {
     }
 
     @Test
-    fun cannotStoreOrgWhenpostcodeIsMissing() {
+    fun cannotStoreOrgWhenPostcodeIsMissing() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNopostcode())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonNoPostcode())
         )
             .andExpect(status().isBadRequest)
     }
 
     @Test
-    fun cannotStoreOrgWhenpostcodeIsBlank() {
+    fun cannotStoreOrgWhenPostcodeIsBlank() {
         mockMvc.perform(
-            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonpostcodeBlank())
+            post("/organisations").contentType(APPLICATION_JSON).content(orgRequestJsonPostcodeBlank())
         )
             .andExpect(status().isBadRequest)
     }
@@ -190,7 +190,7 @@ class CanStoreAndReadOrganisationTest {
         val contactDetails: Map<String, Any> = contactDetailsFromDatabase(contactDetailsId)
         assertDataMatches(contactDetails, bbcContactFixture(contactDetailsId))
 
-        val addressId: UUID = UUID.fromString(org["address_id"] as String)
+        val addressId: UUID = org["address_id"] as UUID
         val address: Map<String, Any> = addressFromDatabase(addressId)
         assertDataMatches(address, bbcAddressFixture(addressId))
     }
@@ -211,5 +211,5 @@ class CanStoreAndReadOrganisationTest {
         queryEntityFromDatabase("select * from organisations_schema.contact_details where id = ?", id)
 
     private fun addressFromDatabase(id: UUID): MutableMap<String, Any> =
-        queryEntityFromDatabase("select * from organisations_schema.address where id = ?", id)
+        queryEntityFromDatabase("select * from organisations_schema.addresses where id = ?", id)
 }
